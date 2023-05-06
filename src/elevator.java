@@ -18,11 +18,15 @@ public class elevator implements Runnable{
         synchronized (pos) {
             System.out.println();
             for (int i = 15; i > 0; --i) {
+                if (i<10){
+                    System.out.print(" "+i);
+                }
+                else System.out.print(i);
                 if (pos[0]==i){
-                    System.out.print(i+ " |1|");
+                    System.out.print(" |1|");
                 }
                 else{
-                    System.out.print(i+ " | |");
+                    System.out.print(" | |");
                 }
                 if (pos[1]==i){
                     System.out.println("|2|");
