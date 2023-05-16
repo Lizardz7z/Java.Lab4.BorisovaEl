@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static java.lang.Math.abs;
 
@@ -20,12 +21,14 @@ public class Main {
         return -1;
     }
     public static void main(String[] args) throws Exception{
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter number and interval of orders:");
+        int n=in.nextInt();
+        long interval = in.nextLong();
         floors_stage[] floors=new floors_stage[15];
         for (int i=0; i<15;++i){
             floors[i]=new floors_stage();
         }
-
-        int n=20;
 
         elevator el1=new elevator(1);
         elevator el2=new elevator(2);
@@ -101,7 +104,7 @@ public class Main {
                     }
                 }
             }
-            Thread.sleep(5000);
+            Thread.sleep(interval);
         }
         synchronized (el1) {
             el1.isWork = false;
